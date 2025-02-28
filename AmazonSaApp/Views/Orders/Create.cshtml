@@ -1,0 +1,26 @@
+@model Order
+
+<h2>Place an Order</h2>
+<form method="post">
+    <div>
+        <label for="UserId">User ID:</label>
+        <input type="number" asp-for="UserId" />
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label for="ProductId">Product ID:</label>
+        <input type="number" name="ProductId" required />
+    </div>
+
+    <div>
+        <label for="Quantity">Quantity:</label>
+        <input type="number" name="Quantity" required />
+    </div>
+
+    <button type="submit">Submit Order</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

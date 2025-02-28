@@ -1,0 +1,15 @@
+@model List<Order>
+
+    <h2>Order History</h2>
+    @foreach (var order in Model)
+{
+    <div>
+        <p>Order ID: @order.Id | Date: @order.OrderDate</p>
+        <ul>
+            @foreach (var detail in order.OrderDetails)
+            {
+            <li>Product ID: @detail.ProductId | Quantity: @detail.Quantity</li>
+            }
+        </ul>
+    </div>
+}

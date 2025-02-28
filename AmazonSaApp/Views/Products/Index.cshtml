@@ -1,0 +1,12 @@
+@model List<Product>
+
+    <h2>Product List</h2>
+    @foreach (var product in Model)
+{
+    <div>
+        <h3>@product.Name</h3>
+        <p>@product.Description</p>
+        <p>Price: @product.Price</p>
+        <a href="/Orders/Create?productId=@product.Id">Order Now</a>
+    </div>
+}
